@@ -10,9 +10,11 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const docRef = await addDoc(collection(db, 'users'), {
+      const docRef = await addDoc(collection(db, 'attraction'), {
         name: name,
-        age: age
+        category: age,
+        location: age,
+        code: age
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
