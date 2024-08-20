@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import { db } from '../firebase-config';
-import { collection, addDoc } from 'firebase/firestore';
 
-
-const attractionForm = () => {
-
+const PlaceForm = ({ onAddPlace }) => {
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const [location, setLocation] = useState('');
@@ -12,14 +8,14 @@ const attractionForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const placeData = { name, category, location, code };
+
     try {
-      const docRef = await addDoc(collection(db, 'attraction'), {
-        name: name,
-        category: category,
-        location: location,
-        code: code
-      });
-      console.log("Document written with ID: ", docRef.id);
+      await onAddPlace(placeData);
+      setName('');
+      setCategory('');
+      setLocation('');
+      setCode('');
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -60,4 +56,4 @@ const attractionForm = () => {
   )
 }
 
-export default attractionForm;
+export default PlaceForm;

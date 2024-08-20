@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Attraction from './pages/attraction';
+import City from './pages/City';
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
-          <Route path="/" element={<Attraction />} />
+          <Route path="/" element={<City />} />
         </Routes>
       </div>
     </BrowserRouter>
