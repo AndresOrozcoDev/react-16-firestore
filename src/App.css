@@ -7,6 +7,11 @@
 .content {
   width: 100%;
   padding: 1rem 2rem;
+  background-color: blue;
+}
+
+.container {
+  background-color: white;
 }
 
 .btn {
@@ -31,4 +36,11 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.msg-error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
 }

@@ -46,7 +46,9 @@ const Form = ({ onAddPlace }) => {
         name="name"
         value={formData.name}
         onChange={handleChange}
-        placeholder="Name"
+        placeholder="Nombre"
+        inputMode="text"
+        autoComplete="off"
         required
       />
 
@@ -56,7 +58,9 @@ const Form = ({ onAddPlace }) => {
         name="location"
         value={formData.location}
         onChange={handleChange}
-        placeholder="Location"
+        placeholder="Ubicacion"
+        inputMode="text"
+        autoComplete="off"
         required
       />
 
@@ -66,7 +70,9 @@ const Form = ({ onAddPlace }) => {
         name="code"
         value={formData.code}
         onChange={handleChange}
-        placeholder="Code"
+        placeholder="Codigo"
+        inputMode="numeric"
+        autoComplete="off"
         required
       />
 
@@ -77,7 +83,7 @@ const Form = ({ onAddPlace }) => {
         onChange={handleChange}
         required
       >
-        <option value="" disabled>Select an option</option>
+        <option value="" disabled>Seleccione una opcion</option>
         <option value="restaurante">Restaurante</option>
         <option value="mirador">Mirador</option>
         <option value="rooftop">Roof top</option>

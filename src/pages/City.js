@@ -62,14 +62,16 @@ const City = () => {
 
     return (
         <Fragment>
-            <Form onAddPlace={handleAddPlace} />
-            <Table data={places} onDelete={handleDelete} />
+            <div className='container'>
+                <Form onAddPlace={handleAddPlace} />
+                <Table data={places} onDelete={handleDelete} />
+            </div>
 
-            <button className='btn' onClick={openModal}>Open Modal</button>
+            {/* <button className='btn' onClick={openModal}>Open Modal</button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <h2>Modal Title</h2>
                 <p>This is the content of the modal.</p>
-            </Modal>
+            </Modal> */}
 
             <Notify
                 isOpen={notify.isOpen}
