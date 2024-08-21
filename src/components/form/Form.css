@@ -1,13 +1,17 @@
 form {
-    padding-block: 1rem;
+    gap: 8px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    padding-block: 1rem;
 }
 
 .input {
-    flex: 1 1 200px;
     height: 35px;
-    border: 1px solid #c3c3c3;
+    color: black;
+    flex: 1 1 200px;
+    font-size: 1rem;
     border-radius: 10px;
+    padding-inline: 10px;
+    background-color: white;
+    border: 1px solid #c3c3c3;
 }

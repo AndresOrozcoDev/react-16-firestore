@@ -61,7 +61,7 @@ const Form = ({ onAddPlace }) => {
         required
       />
       <input
-        className="input"
+        className="btn"
         type="submit"
         value="Submit"
       />

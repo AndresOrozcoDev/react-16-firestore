@@ -1,12 +1,13 @@
 table {
-    border-collapse: collapse;
     width: 100%;
     margin-block: 1rem;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
 td,
 th {
-    border: 1px solid #dddddd;
-    text-align: left;
     padding: 8px;
+    text-align: left;
+    border: 1px solid #dddddd;
 }

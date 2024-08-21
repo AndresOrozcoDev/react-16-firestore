@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import '../App.css';
 
 import Form from '../components/form/Form';
 import Table from '../components/table/Table';
@@ -59,14 +60,14 @@ const City = () => {
             <Form onAddPlace={handleAddPlace} />
             <Table data={places} onDelete={handleDelete} />
 
-            <button onClick={openModal}>Open Modal</button>
+            <button className='btn' onClick={openModal}>Open Modal</button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <h2>Modal Title</h2>
                 <p>This is the content of the modal.</p>
-                <button onClick={closeModal}>Close</button>
+                <button className='btn' onClick={closeModal}>Close</button>
             </Modal>
 
-            <button onClick={showNotification}>Show Notification</button>
+            <button className='btn' onClick={showNotification}>Show Notification</button>
             <Notify
                 isOpen={isNotificationOpen}
                 onClose={closeNotification}
