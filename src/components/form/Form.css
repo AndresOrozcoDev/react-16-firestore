@@ -1,0 +1,13 @@
+form {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.input {
+    flex: 1 1 200px;
+    height: 35px;
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
+}

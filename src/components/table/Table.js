@@ -1,6 +1,11 @@
 import React, { Fragment } from 'react';
+import './Table.css';
 
-const PlacesTable = ({ data }) => {
+const Table = ({ data, onDelete }) => {
+
+    const handleDelete = (id) => {
+        onDelete(id);
+    };
 
     return (
         <Fragment>
@@ -11,6 +16,7 @@ const PlacesTable = ({ data }) => {
                         <th>Category</th>
                         <th>Location</th>
                         <th>Code</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,6 +26,7 @@ const PlacesTable = ({ data }) => {
                             <td>{place.category}</td>
                             <td>{place.location}</td>
                             <td>{place.code}</td>
+                            <td onClick={() => handleDelete(place.id)}>X</td>
                         </tr>
                     ))}
                 </tbody>
@@ -28,4 +35,4 @@ const PlacesTable = ({ data }) => {
     )
 }
 
-export default PlacesTable;
+export default Table;

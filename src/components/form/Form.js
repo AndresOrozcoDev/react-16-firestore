@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import './Form.css';
 
-const PlaceForm = ({ onAddPlace }) => {
+const Form = ({ onAddPlace }) => {
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const [location, setLocation] = useState('');
@@ -26,34 +27,46 @@ const PlaceForm = ({ onAddPlace }) => {
       <input
         type="text"
         placeholder="Name"
+        className="input"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
       />
       <input
         type="text"
-        placeholder="Category"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        required
-      />
-      <input
-        type="text"
         placeholder="Location"
+        className="input"
         value={location}
         onChange={(e) => setLocation(e.target.value)}
         required
       />
+      <select
+        className="input"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        required
+      >
+        <option value="" disabled>Select an option</option>
+        <option value="restaurante">Restaurante</option>
+        <option value="mirador">Mirador</option>
+        <option value="rooftop">Roof top</option>
+        <option value="parche">Parche</option>
+      </select>
       <input
         type="number"
         placeholder="Code"
+        className="input"
         value={code}
         onChange={(e) => setCode(e.target.value)}
         required
       />
-      <button type="submit">Submit</button>
+      <input
+        className="input"
+        type="submit"
+        value="Submit"
+      />
     </form>
   )
 }
 
-export default PlaceForm;
+export default Form;

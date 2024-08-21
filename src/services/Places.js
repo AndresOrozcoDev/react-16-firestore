@@ -1,6 +1,5 @@
-// services/places.js
 import { db } from '../firebase-config';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
 
 export const addPlace = async (placeData) => {
   try {
@@ -22,6 +21,16 @@ export const getPlaces = async () => {
     return placesList;
   } catch (e) {
     console.error("Error fetching documents: ", e);
+    throw e;
+  }
+};
+
+export const deletePlace = async (id) => {
+  try {
+    await deleteDoc(doc(db, 'places', id));
+    console.log("Document successfully deleted!");
+  } catch (e) {
+    console.error("Error deleting document: ", e);
     throw e;
   }
 };
