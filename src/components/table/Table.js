@@ -12,11 +12,12 @@ const Table = ({ data, onDelete }) => {
             <table>
                 <thead>
                     <tr>
-                        <th className='ellipsis'>Name</th>
-                        <th className='ellipsis'>Category</th>
-                        <th className='ellipsis'>Location</th>
-                        <th className='ellipsis'>Code</th>
-                        <th className='ellipsis'>Delete</th>
+                        <th className='ellipsis'>Nombre</th>
+                        <th className='ellipsis'>Categoria</th>
+                        <th className='ellipsis'>Ubicacion</th>
+                        <th className='ellipsis'>Codigo</th>
+                        <th className='ellipsis'>Estado</th>
+                        <th className='ellipsis'>Opcion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +27,8 @@ const Table = ({ data, onDelete }) => {
                             <td className='ellipsis'>{place.category}</td>
                             <td className='ellipsis'>{place.location}</td>
                             <td className='ellipsis'>{place.code}</td>
-                            <td onClick={() => handleDelete(place.id)}>X</td>
+                            <td className='ellipsis'>{place.status}</td>
+                            <td onClick={() => handleDelete(place.id)} title='Eliminar'>X</td>
                         </tr>
                     ))}
                 </tbody>

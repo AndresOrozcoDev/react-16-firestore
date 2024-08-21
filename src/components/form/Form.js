@@ -2,48 +2,75 @@ import React, { useState } from 'react';
 import './Form.css';
 
 const Form = ({ onAddPlace }) => {
-  const [name, setName] = useState('');
-  const [category, setCategory] = useState('');
-  const [location, setLocation] = useState('');
-  const [code, setCode] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    category: '',
+    location: '',
+    code: '',
+    status: '',
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const placeData = { name, category, location, code };
+    const { name, category, location, code, status } = formData;
 
     try {
-      await onAddPlace(placeData);
-      setName('');
-      setCategory('');
-      setLocation('');
-      setCode('');
+      await onAddPlace({ name, category, location, code, status });
+      setFormData({
+        name: '',
+        category: '',
+        location: '',
+        code: '',
+        status: '',
+      });
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
   return (
     <form onSubmit={handleSubmit}>
+
       <input
+        className="input"
         type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
         placeholder="Name"
-        className="input"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
       />
+
       <input
-        type="text"
-        placeholder="Location"
         className="input"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-        required
+        type="text"
+        name="location"
+        value={formData.location}
+        onChange={handleChange}
+        placeholder="Location"
       />
+
+      <input
+        className="input"
+        type="text"
+        name="code"
+        value={formData.code}
+        onChange={handleChange}
+        placeholder="Code"
+      />
+
       <select
         className="input"
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
+        name="category"
+        value={formData.category}
+        onChange={handleChange}
         required
       >
         <option value="" disabled>Select an option</option>
@@ -52,19 +79,37 @@ const Form = ({ onAddPlace }) => {
         <option value="rooftop">Roof top</option>
         <option value="parche">Parche</option>
       </select>
-      <input
-        type="number"
-        placeholder="Code"
-        className="input"
-        value={code}
-        onChange={(e) => setCode(e.target.value)}
-        required
-      />
+
+      <div className='input-radio'>
+        <input
+          type="radio"
+          id="nuevo"
+          name="status"
+          value="nuevo"
+          checked={formData.status === 'Nuevo'}
+          onChange={handleChange}
+        />
+        <label htmlFor="nuevo">Nuevo</label>
+      </div>
+
+      <div className='input-radio'>
+        <input
+          type="radio"
+          id="conocido"
+          name="status"
+          value="conocido"
+          checked={formData.status === 'Conocido'}
+          onChange={handleChange}
+        />
+        <label htmlFor="conocido">Conocido</label>
+      </div>
+
       <input
         className="btn"
         type="submit"
-        value="Submit"
+        value="Agregar"
       />
+
     </form>
   )
 }

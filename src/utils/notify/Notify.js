@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import './Notify.css'; // Opcional: para estilos
+import './Notify.css';
 
-const Notify = ({ message, type = 'info', isOpen, onClose }) => {
+const Notify = ({ isOpen, message, type, onClose }) => {
     useEffect(() => {
         if (isOpen) {
             const timer = setTimeout(() => {
                 onClose();
-            }, 3000);
+            }, 3000); // Notificación se cierra después de 3 segundos
             return () => clearTimeout(timer);
         }
     }, [isOpen, onClose]);
@@ -15,8 +15,7 @@ const Notify = ({ message, type = 'info', isOpen, onClose }) => {
 
     return (
         <div className={`notification ${type}`}>
-            <span>{message}</span>
-            <button className="notification-close" onClick={onClose}>X</button>
+            {message}
         </div>
     );
 };

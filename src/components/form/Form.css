@@ -1,5 +1,5 @@
 form {
-    gap: 8px;
+    gap: 10px;
     display: flex;
     flex-wrap: wrap;
     padding-block: 1rem;
@@ -14,4 +14,10 @@ form {
     padding-inline: 10px;
     background-color: white;
     border: 1px solid #c3c3c3;
+}
+
+.input-radio {
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
