@@ -46,6 +46,7 @@ const Form = ({ onAddPlace }) => {
         value={formData.name}
         onChange={handleChange}
         placeholder="Name"
+        required
       />
 
       <input
@@ -55,6 +56,7 @@ const Form = ({ onAddPlace }) => {
         value={formData.location}
         onChange={handleChange}
         placeholder="Location"
+        required
       />
 
       <input
@@ -64,6 +66,7 @@ const Form = ({ onAddPlace }) => {
         value={formData.code}
         onChange={handleChange}
         placeholder="Code"
+        required
       />
 
       <select
@@ -86,10 +89,10 @@ const Form = ({ onAddPlace }) => {
           id="nuevo"
           name="status"
           value="nuevo"
-          checked={formData.status === 'Nuevo'}
           onChange={handleChange}
+          required
         />
-        <label htmlFor="nuevo">Nuevo</label>
+        <label for="nuevo">Nuevo</label>
       </div>
 
       <div className='input-radio'>
@@ -98,10 +101,10 @@ const Form = ({ onAddPlace }) => {
           id="conocido"
           name="status"
           value="conocido"
-          checked={formData.status === 'Conocido'}
           onChange={handleChange}
+          required
         />
-        <label htmlFor="conocido">Conocido</label>
+        <label for="conocido">Conocido</label>
       </div>
 
       <input
