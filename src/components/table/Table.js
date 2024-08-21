@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 import './Table.css';
 
+
 const Table = ({ data, onDelete }) => {
 
-    const handleDelete = (id) => {
-        onDelete(id);
-    };
+    const handleDelete = (id) => {onDelete(id)}
 
     return (
         <Fragment>
@@ -28,7 +27,7 @@ const Table = ({ data, onDelete }) => {
                             <td className='ellipsis'>{place.location}</td>
                             <td className='ellipsis'>{place.code}</td>
                             <td className='ellipsis'>{place.status}</td>
-                            <td onClick={() => handleDelete(place.id)} title='Eliminar'>X</td>
+                            <td onClick={() => handleDelete(place.id)} title='Eliminar' className='btn-red'>X</td>
                         </tr>
                     ))}
                 </tbody>

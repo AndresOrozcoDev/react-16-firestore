@@ -11,10 +11,3 @@ th {
     text-align: left;
     border: 1px solid #dddddd;
 }
-
-td:last-child {
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    color: red;
-}

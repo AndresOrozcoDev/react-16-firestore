@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Form.css';
 
+
 const Form = ({ onAddPlace }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -92,7 +93,7 @@ const Form = ({ onAddPlace }) => {
           onChange={handleChange}
           required
         />
-        <label for="nuevo">Nuevo</label>
+        <label htmlFor="nuevo">Nuevo</label>
       </div>
 
       <div className='input-radio'>
@@ -104,7 +105,7 @@ const Form = ({ onAddPlace }) => {
           onChange={handleChange}
           required
         />
-        <label for="conocido">Conocido</label>
+        <label htmlFor="conocido">Conocido</label>
       </div>
 
       <input

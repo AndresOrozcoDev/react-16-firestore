@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import './Notify.css';
 
+
 const Notify = ({ isOpen, message, type, onClose }) => {
+    
     useEffect(() => {
         if (isOpen) {
             const timer = setTimeout(() => {
                 onClose();
-            }, 3000); // Notificación se cierra después de 3 segundos
+            }, 3000);
             return () => clearTimeout(timer);
         }
     }, [isOpen, onClose]);

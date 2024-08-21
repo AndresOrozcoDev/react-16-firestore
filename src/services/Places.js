@@ -1,6 +1,8 @@
 import { db } from '../firebase-config';
 import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
 
+
+// Servicio para agregar un lugar a Firestore.
 export const addPlace = async (placeData) => {
   try {
     const docRef = await addDoc(collection(db, 'places'), placeData);
@@ -11,6 +13,8 @@ export const addPlace = async (placeData) => {
   }
 };
 
+
+// Servicio para obtener la lista de lugares de Firestore.
 export const getPlaces = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, 'places'));
@@ -25,6 +29,8 @@ export const getPlaces = async () => {
   }
 };
 
+
+// Servicio para eliminar un lugar de Firestore.
 export const deletePlace = async (id) => {
   try {
     await deleteDoc(doc(db, 'places', id));

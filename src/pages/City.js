@@ -1,20 +1,21 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import '../App.css';
 
-import Form from '../components/form/Form';
-import Table from '../components/table/Table';
 import Modal from '../utils/modal/Modal';
+import Form from '../components/form/Form';
 import Notify from '../utils/notify/Notify';
+import Table from '../components/table/Table';
 
 import { getPlaces, addPlace, deletePlace } from '../services/Places';
+
 
 const City = () => {
     const [places, setPlaces] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' });
 
-    const openModal = () => { setIsModalOpen(true); };
-    const closeModal = () => { setIsModalOpen(false); };
+    const openModal = () => { setIsModalOpen(true) };
+    const closeModal = () => { setIsModalOpen(false) };
 
     const showNotify = (message, type) => {
         setNotify({
@@ -63,12 +64,11 @@ const City = () => {
         <Fragment>
             <Form onAddPlace={handleAddPlace} />
             <Table data={places} onDelete={handleDelete} />
-            
+
             <button className='btn' onClick={openModal}>Open Modal</button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <h2>Modal Title</h2>
                 <p>This is the content of the modal.</p>
-                <button className='btn' onClick={closeModal}>Close</button>
             </Modal>
 
             <Notify
@@ -77,7 +77,6 @@ const City = () => {
                 type={notify.type}
                 onClose={() => setNotify({ ...notify, isOpen: false })}
             />
-
         </Fragment>
     );
 };

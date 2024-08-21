@@ -16,8 +16,16 @@ form {
     border: 1px solid #c3c3c3;
 }
 
+input[type="radio"] {
+    accent-color: blue;
+}
+
 .input-radio {
+    gap: 3px;
     display: flex;
     align-items: center;
-    gap: 3px;
+}
+
+.input-radio label {
+    cursor: pointer;
 }
