@@ -83,7 +83,7 @@ const Form = ({ onAddPlace }) => {
         onChange={handleChange}
         required
       >
-        <option value="" disabled>Seleccione una opcion</option>
+        <option value="" disabled>Categoria</option>
         <option value="restaurante">Restaurante</option>
         <option value="mirador">Mirador</option>
         <option value="rooftop">Roof top</option>

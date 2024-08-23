@@ -3,10 +3,10 @@
   right: 20px;
   bottom: 20px;
   opacity: 0.9;
-  color: #fff;
   position: fixed;
-  border-radius: 5px;
   padding: 10px 30px;
+  color: var(--white-color);
+  border-radius: var(--border-radius);
   transition: opacity 0.3s ease-in-out;
 }
 

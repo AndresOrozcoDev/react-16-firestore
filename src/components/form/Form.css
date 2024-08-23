@@ -1,24 +1,23 @@
 form {
-    gap: 10px;
+    gap: 12px;
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
-    padding: 2rem;
-    background-color: white;
 }
 
 .input {
     height: 35px;
-    color: black;
     flex: 1 1 200px;
     font-size: 1rem;
     border-radius: 10px;
     padding-inline: 10px;
-    background-color: white;
-    border: 1px solid #c3c3c3;
+    color: var(--black-color);
+    border: 1px solid var(--gray-color);
+    background-color: var(--white-color);
 }
 
 input[type="radio"] {
-    accent-color: blue;
+    accent-color: var(--primary-color);
 }
 
 .input-radio {

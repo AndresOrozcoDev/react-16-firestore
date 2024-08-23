@@ -1,0 +1,13 @@
+:root {
+
+    /* Colors */
+    --primary-color: #008eed;
+    --secondary-color: #2ecc71;
+    --white-color: white;
+    --black-color: black;
+    --gray-color: #c3c3c3;
+    --red-color: red;
+
+    /* Standars */
+    --border-radius: 10px;
+}

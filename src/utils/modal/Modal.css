@@ -14,9 +14,9 @@
   width: 100%;
   padding: 20px;
   max-width: 500px;
-  border-radius: 8px;
   position: relative;
-  background: white;
+  background: var(--white-color);
+  border-radius: var(--border-radius);
 }
 
 .modal-close {
@@ -28,6 +28,6 @@
 
 @media (max-width: 475px) {
   .modal-container {
-    max-width: 90%;
+    max-width: 85%;
   }
 }
