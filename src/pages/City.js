@@ -82,6 +82,12 @@ const City = () => {
             )}
 
             <div className='container'>
+                <div className='container-head'>
+                    <h2>MEDELLIN</h2>
+                    <span>
+                        Es una chimba!
+                    </span>
+                </div>
                 <Form onAddPlace={handleAddPlace} />
                 <Table data={places} onDelete={handleDelete} />
             </div>

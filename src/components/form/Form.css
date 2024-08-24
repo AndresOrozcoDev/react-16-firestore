@@ -1,6 +1,5 @@
 form {
     gap: 12px;
-    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
 }
@@ -9,9 +8,9 @@ form {
     height: 35px;
     flex: 1 1 200px;
     font-size: 1rem;
-    border-radius: 10px;
     padding-inline: 10px;
     color: var(--black-color);
+    border-radius: var(--border-radius);
     border: 1px solid var(--gray-color);
     background-color: var(--white-color);
 }

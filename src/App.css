@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background: var(--gray-color);
+}
+
 .bg-full {
   top: 0;
   left: 0;
@@ -15,9 +30,16 @@
 }
 
 .container {
-  padding: 1rem;
+  gap: 20px;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
   border-radius: var(--border-radius);
   background-color: var(--white-color);
+}
+
+.container-head {
+  text-align: center;
 }
 
 .btn {

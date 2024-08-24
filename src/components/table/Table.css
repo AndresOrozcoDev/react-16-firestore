@@ -1,12 +1,13 @@
 .content-table {
-    padding: 2rem;
+    width: 100%;
+    overflow-x: auto;
     background-color: var(--white-color);
 }
 
 table {
     width: 100%;
     padding: 1rem;
-    table-layout: fixed;
+    table-layout: auto;
     border-collapse: collapse;
     background-color: var(--white-color);
 }

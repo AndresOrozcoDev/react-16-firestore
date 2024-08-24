@@ -84,10 +84,10 @@ const Form = ({ onAddPlace }) => {
         required
       >
         <option value="" disabled>Categoria</option>
-        <option value="restaurante">Restaurante</option>
-        <option value="mirador">Mirador</option>
-        <option value="rooftop">Roof top</option>
-        <option value="parche">Parche</option>
+        <option value="Restaurante">Restaurante</option>
+        <option value="Mirador">Mirador</option>
+        <option value="Rooftop">Roof top</option>
+        <option value="Parche">Parche</option>
       </select>
 
       <div className='input-radio'>
@@ -95,7 +95,7 @@ const Form = ({ onAddPlace }) => {
           type="radio"
           id="nuevo"
           name="status"
-          value="nuevo"
+          value="Nuevo"
           onChange={handleChange}
           required
         />
@@ -107,7 +107,7 @@ const Form = ({ onAddPlace }) => {
           type="radio"
           id="conocido"
           name="status"
-          value="conocido"
+          value="Conocido"
           onChange={handleChange}
           required
         />
