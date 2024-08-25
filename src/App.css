@@ -32,6 +32,7 @@
 .container {
   gap: 20px;
   display: flex;
+  height: 100%;
   padding: 2rem;
   flex-direction: column;
   border-radius: var(--border-radius);

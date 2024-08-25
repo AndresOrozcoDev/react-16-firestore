@@ -12,6 +12,13 @@ table {
     background-color: var(--white-color);
 }
 
+thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--gray-color);
+    z-index: 1;
+}
+
 td,
 th {
     padding: 8px;

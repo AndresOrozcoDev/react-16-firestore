@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Form.css';
 
 
 const Form = ({ onAddPlace }) => {
+
+  const nameInputRef = useRef(null);
+  const locationInputRef = useRef(null);
   const [formData, setFormData] = useState({
     name: '',
     category: '',
     location: '',
     code: '',
-    status: '',
+    status: 'nuevo',
   });
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, category, location, code, status } = formData;
-
     try {
       await onAddPlace({ name, category, location, code, status });
       setFormData({
@@ -22,12 +25,13 @@ const Form = ({ onAddPlace }) => {
         category: '',
         location: '',
         code: '',
-        status: '',
+        status: 'nuevo',
       });
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,6 +41,16 @@ const Form = ({ onAddPlace }) => {
     }));
   };
 
+
+  const handleInput = (ref) => {
+    if (ref.current.value.length > 0) {
+      const capitalized = ref.current.value.charAt(0).toUpperCase() +
+        ref.current.value.slice(1);
+      ref.current.value = capitalized;
+    }
+  };
+
+
   return (
     <form onSubmit={handleSubmit}>
 
@@ -44,6 +58,8 @@ const Form = ({ onAddPlace }) => {
         className="input"
         type="text"
         name="name"
+        ref={nameInputRef}
+        onInput={() => handleInput(nameInputRef)}
         value={formData.name}
         onChange={handleChange}
         placeholder="Nombre"
@@ -56,6 +72,8 @@ const Form = ({ onAddPlace }) => {
         className="input"
         type="text"
         name="location"
+        ref={locationInputRef}
+        onInput={() => handleInput(locationInputRef)}
         value={formData.location}
         onChange={handleChange}
         placeholder="Ubicacion"
@@ -89,6 +107,7 @@ const Form = ({ onAddPlace }) => {
         <option value="Rooftop">Roof top</option>
         <option value="Parche">Parche</option>
         <option value="Hotel">Hotel</option>
+        <option value="Antojo">Antojo</option>
       </select>
 
       <div className='input-radio'>
@@ -100,7 +119,7 @@ const Form = ({ onAddPlace }) => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="nuevo">nuevo</label>
+        <label htmlFor="nuevo">Nuevo</label>
       </div>
 
       <div className='input-radio'>

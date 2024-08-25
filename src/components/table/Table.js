@@ -8,6 +8,9 @@ const Table = ({ data, onDelete }) => {
 
     const handleDelete = (id) => { onDelete(id) }
 
+    // Ordenar los datos por el campo `code` en orden ascendente
+    const sortedData = data.sort((a, b) => a.code - b.code);
+
     return (
         <Fragment>
             <div className='content-table'>
@@ -26,14 +29,14 @@ const Table = ({ data, onDelete }) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((place, index) => (
-                                <tr key={index}>
-                                    <td className='ellipsis'>{place.name}</td>
-                                    <td className='ellipsis'>{place.category}</td>
-                                    <td className='ellipsis'>{place.location}</td>
-                                    <td className='ellipsis'>{place.code}</td>
-                                    <td className='ellipsis'>{place.status}</td>
-                                    <td onClick={() => handleDelete(place.id)} title='Eliminar' className='btn-red'>X</td>
+                            {sortedData.map((item) => (
+                                <tr key={item.id}>
+                                    <td className='ellipsis'>{item.name}</td>
+                                    <td className='ellipsis'>{item.category}</td>
+                                    <td className='ellipsis'>{item.location}</td>
+                                    <td className='ellipsis'>{item.code}</td>
+                                    <td className='ellipsis'>{item.status}</td>
+                                    <td onClick={() => handleDelete(item.id)} title='Eliminar' className='btn-red'>X</td>
                                 </tr>
                             ))}
                         </tbody>
