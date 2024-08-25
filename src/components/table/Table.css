@@ -13,10 +13,9 @@ table {
 }
 
 thead {
-    position: sticky;
     top: 0;
+    position: sticky;
     background-color: var(--gray-color);
-    z-index: 1;
 }
 
 td,
