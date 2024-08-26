@@ -58,7 +58,7 @@
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-  color: var(--red-color);
+  color: var(--danger-color);
 }
 
 .ellipsis {
@@ -70,7 +70,7 @@
 .msg-error {
   font-weight: bold;
   text-align: center;
-  color: var(--red-color);
+  color: var(--danger-color);
 }
 
 .bg-loader {
