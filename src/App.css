@@ -25,7 +25,7 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  padding: 3rem;
+  padding: 3rem 1rem;
   background-color: var(--primary-color);
 }
 
@@ -34,8 +34,10 @@
   display: flex;
   height: 100%;
   padding: 2rem;
+  overflow: scroll;
   flex-direction: column;
   border-radius: var(--border-radius);
+  border: 1px solid var(--gray-color);
   background-color: var(--white-color);
 }
 
