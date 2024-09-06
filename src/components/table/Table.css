@@ -1,6 +1,6 @@
 .content-table {
     width: 100%;
-    overflow-x: auto;
+    overflow: visible;
     background-color: var(--white-color);
 }
 
@@ -22,4 +22,10 @@ th {
     padding: 8px;
     text-align: left;
     border: 1px solid var(--gray-color);
+}
+
+@media (max-width: 475px) {
+    .content-table {
+        overflow-x: scroll;
+    }
 }
