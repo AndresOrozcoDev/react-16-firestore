@@ -4,15 +4,9 @@ form {
     flex-wrap: wrap;
 }
 
-.input {
-    height: 35px;
-    flex: 1 1 200px;
-    font-size: 1rem;
-    padding-inline: 10px;
-    color: var(--black-color);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--gray-color);
-    background-color: var(--white-color);
+form .container-opt {
+    width: 100%;
+    text-align: end;
 }
 
 input[type="radio"] {

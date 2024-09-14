@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Fragment } from 'react';
 import './Form.css';
-
+import { useNavigate } from 'react-router-dom';
 
 const Form = ({ onAddPlace }) => {
 
@@ -14,6 +14,11 @@ const Form = ({ onAddPlace }) => {
     status: 'nuevo',
   });
 
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate('/');
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,95 +57,124 @@ const Form = ({ onAddPlace }) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Fragment>
 
-      <input
-        className="input"
-        type="text"
-        name="name"
-        ref={nameInputRef}
-        onInput={() => handleInput(nameInputRef)}
-        value={formData.name}
-        onChange={handleChange}
-        placeholder="Nombre"
-        inputMode="text"
-        autoComplete="off"
-        required
-      />
+      <h2 className='title'>Crear Lugar</h2>
 
-      <input
-        className="input"
-        type="text"
-        name="location"
-        ref={locationInputRef}
-        onInput={() => handleInput(locationInputRef)}
-        value={formData.location}
-        onChange={handleChange}
-        placeholder="Ubicacion"
-        inputMode="text"
-        autoComplete="off"
-        required
-      />
+      <form onSubmit={handleSubmit}>
 
-      <input
-        className="input"
-        type="text"
-        name="code"
-        value={formData.code}
-        onChange={handleChange}
-        placeholder="Codigo"
-        inputMode="numeric"
-        autoComplete="off"
-        required
-      />
+        <div className='form-group'>
+          <label>Name</label>
+          <input
+            className="input"
+            type="text"
+            name="name"
+            ref={nameInputRef}
+            onInput={() => handleInput(nameInputRef)}
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Nombre"
+            inputMode="text"
+            autoComplete="off"
+            required
+          />
+        </div>
 
-      <select
-        className="input"
-        name="category"
-        value={formData.category}
-        onChange={handleChange}
-        required
-      >
-        <option value="" disabled>Categoria</option>
-        <option value="Restaurante">Restaurante</option>
-        <option value="Mirador">Mirador</option>
-        <option value="Rooftop">Roof top</option>
-        <option value="Parche">Parche</option>
-        <option value="Hotel">Hotel</option>
-        <option value="Antojo">Antojo</option>
-      </select>
+        <div className='form-group'>
+          <label>Ubicacion</label>
+          <input
+            className="input"
+            type="text"
+            name="location"
+            ref={locationInputRef}
+            onInput={() => handleInput(locationInputRef)}
+            value={formData.location}
+            onChange={handleChange}
+            placeholder="Ubicacion"
+            inputMode="text"
+            autoComplete="off"
+            required
+          />
+        </div>
 
-      <div className='input-radio'>
-        <input
-          type="radio"
-          id="nuevo"
-          name="status"
-          value="nuevo"
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="nuevo">Nuevo</label>
-      </div>
+        <div className='form-group'>
+          <label>Codigo</label>
+          <select
+            className="input"
+            name="code"
+            value={formData.category}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>Codigo</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
 
-      <div className='input-radio'>
-        <input
-          type="radio"
-          id="conocido"
-          name="status"
-          value="conocido"
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="conocido">Conocido</label>
-      </div>
+        <div className='form-group'>
+          <label>Categoria</label>
+          <select
+            className="input"
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>Categoria</option>
+            <option value="Restaurante">Restaurante</option>
+            <option value="Mirador">Mirador</option>
+            <option value="Rooftop">Roof top</option>
+            <option value="Parche">Parche</option>
+            <option value="Hotel">Hotel</option>
+            <option value="Antojo">Antojo</option>
+          </select>
+        </div>
 
-      <input
-        className="btn"
-        type="submit"
-        value="Agregar"
-      />
+        <div className='form-group'>
+          <label>Estado</label>
+          <div className='input-radio'>
+            <input
+              type="radio"
+              id="nuevo"
+              name="status"
+              value="nuevo"
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="nuevo">Nuevo</label>
+          </div>
 
-    </form>
+          <div className='input-radio'>
+            <input
+              type="radio"
+              id="conocido"
+              name="status"
+              value="conocido"
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="conocido">Conocido</label>
+          </div>
+        </div>
+
+        <div className='container-opt'>
+          <input
+            className="btn"
+            type="submit"
+            value="Agregar"
+          />
+          <input
+            className="btn"
+            type="submit"
+            onClick={goBack}
+            value="Regresar"
+          />
+        </div>
+
+      </form>
+    </Fragment>
   )
 }
 

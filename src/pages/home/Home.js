@@ -1,19 +1,22 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import '../App.css';
+import '../../App.css';
+import { useNavigate } from 'react-router-dom';
 
-import Modal from '../utils/modal/Modal';
-import Form from '../components/form/Form';
-import Notify from '../utils/notify/Notify';
-import Table from '../components/table/Table';
+import Modal from '../../../src/utils/modal/Modal';
+import Form from '../../../src/components/form/Form';
+import Notify from '../../../src/utils/notify/Notify';
+import Table from '../../../src/components/table/Table';
 
-import { getPlaces, addPlace, deletePlace } from '../services/Places';
+import { getPlaces, addPlace, deletePlace } from '../../../src/services/Places';
 
 
-const City = () => {
+const Home = () => {
     const [places, setPlaces] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' });
     const [isLoading, setIsLoading] = useState(false);
+
+    const navigate = useNavigate();
 
     const openModal = () => { setIsModalOpen(true) };
     const closeModal = () => { setIsModalOpen(false) };
@@ -26,6 +29,10 @@ const City = () => {
         });
     };
 
+    const toAdd = () => {
+        navigate('add');
+    };
+
     const fetchPlaces = async () => {
         setIsLoading(true);
         try {
@@ -33,20 +40,6 @@ const City = () => {
             setPlaces(placesData);
         } catch (e) {
             console.error("Error fetching places: ", e);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    const handleAddPlace = async (placeData) => {
-        setIsLoading(true);
-        try {
-            await addPlace(placeData);
-            await fetchPlaces();
-            showNotify('Place added successfully', 'success');
-        } catch (e) {
-            console.error("Error adding place: ", e);
-            showNotify('Error adding place', 'error');
         } finally {
             setIsLoading(false);
         }
@@ -66,7 +59,6 @@ const City = () => {
         }
     };
 
-
     useEffect(() => {
         fetchPlaces();
     }, []);
@@ -81,22 +73,23 @@ const City = () => {
                 </div>
             )}
 
+            <h2 className='title'>MEDELLIN</h2>
+
             <div className='container'>
-                <div className='container-head'>
-                    <h2>MEDELLIN</h2>
-                    <span>
-                        Es una chimba!
-                    </span>
+                <div className='container container-form'>
+                    <button className='btn' onClick={toAdd}>Agregar lugar</button>
+                    <input type='search' className='input' />
                 </div>
-                <Form onAddPlace={handleAddPlace} />
-                <Table data={places} onDelete={handleDelete} />
+                <div className='container container-table'>
+                    <Table data={places} onDelete={handleDelete} />
+                </div>
             </div>
 
-            <button className='btn' onClick={openModal}>Open Modal</button>
+            {/* <button className='btn' onClick={openModal}>Open Modal</button>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <h2>Modal Title</h2>
                 <p>This is the content of the modal.</p>
-            </Modal>
+            </Modal> */}
 
             <Notify
                 isOpen={notify.isOpen}
@@ -108,4 +101,4 @@ const City = () => {
     );
 };
 
-export default City;
+export default Home;

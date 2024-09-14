@@ -4,10 +4,11 @@
     --primary-color: #008eed;
     --white-color: white;
     --black-color: black;
-    --gray-color: #c3c3c3;
+    --gray-color: #f1f1f1;
     --success-color: #1cd469;
     --danger-color: red;
 
-    /* Standars */
-    --border-radius: 10px;
+    /* General */
+    --border-radius: 7px;
+    --height: 35px;
 }
