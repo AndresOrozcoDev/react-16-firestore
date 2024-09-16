@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 import Form from '../../../src/components/form/Form';
@@ -10,6 +11,8 @@ import { addPlace } from '../../../src/services/Places';
 const Add = () => {
     const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' });
     const [isLoading, setIsLoading] = useState(false);
+
+    const navigate = useNavigate();
 
     const showNotify = (message, type) => {
         setNotify({
@@ -24,6 +27,7 @@ const Add = () => {
         try {
             await addPlace(placeData);
             showNotify('Lugar agregado satisfactoriamente.', 'success');
+            navigate('/');
         } catch (e) {
             console.error("Error adding place: ", e);
             showNotify('Hubo un error al momento de agregar.', 'error');

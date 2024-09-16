@@ -82,7 +82,8 @@ const Home = () => {
                     >Agregar lugar</button>
                     <input 
                         type='search' 
-                        className='input' 
+                        className='input'
+                        placeholder='Buscar' 
                     />
                 </div>
                 <div className='container container-table'>
