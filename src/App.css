@@ -46,6 +46,7 @@
 
 .container-form .input {
   width: 100%;
+  padding-inline: 10px;
   height: var(--height);
   color: var(--black-color);
   border-radius: var(--border-radius);

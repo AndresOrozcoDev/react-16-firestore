@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import '../../App.css';
 import { useNavigate } from 'react-router-dom';
+import '../../App.css';
 
 import Notify from '../../../src/utils/notify/Notify';
 import Table from '../../../src/components/table/Table';
@@ -10,14 +10,14 @@ import { getPlaces, deletePlace } from '../../../src/services/Places';
 
 const Home = () => {
     const [places, setPlaces] = useState([]);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
     const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' });
     const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
-    const openModal = () => { setIsModalOpen(true) };
-    const closeModal = () => { setIsModalOpen(false) };
+    // const openModal = () => { setIsModalOpen(true) };
+    // const closeModal = () => { setIsModalOpen(false) };
 
     const showNotify = (message, type) => {
         setNotify({
