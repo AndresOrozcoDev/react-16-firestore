@@ -1,15 +1,13 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 import '../../App.css';
 
-import Modal from '../../../src/utils/modal/Modal';
 import Form from '../../../src/components/form/Form';
 import Notify from '../../../src/utils/notify/Notify';
-import Table from '../../../src/components/table/Table';
 
-import { getPlaces, addPlace, deletePlace } from '../../../src/services/Places';
+import { addPlace } from '../../../src/services/Places';
 
 
-const Home = () => {
+const Add = () => {
     const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' });
     const [isLoading, setIsLoading] = useState(false);
 
@@ -20,27 +18,42 @@ const Home = () => {
             type: type
         });
     };
-    
+
     const handleAddPlace = async (placeData) => {
         setIsLoading(true);
         try {
             await addPlace(placeData);
-            showNotify('Place added successfully', 'success');
+            showNotify('Lugar agregado satisfactoriamente.', 'success');
         } catch (e) {
             console.error("Error adding place: ", e);
-            showNotify('Error adding place', 'error');
+            showNotify('Hubo un error al momento de agregar.', 'error');
         } finally {
             setIsLoading(false);
         }
     };
 
-    return(
+    return (
         <Fragment>
+
+            {isLoading && (
+                <div className="bg-loader">
+                    <div className="loader-text">Loading...</div>
+                </div>
+            )}
+
             <div className='container'>
-                <Form onAddPlace={handleAddPlace}/>
+                <Form onAddPlace={handleAddPlace} />
             </div>
+
+            <Notify
+                isOpen={notify.isOpen}
+                message={notify.message}
+                type={notify.type}
+                onClose={() => setNotify({ ...notify, isOpen: false })}
+            />
+
         </Fragment>
     )
 };
 
-export default Home;
+export default Add;

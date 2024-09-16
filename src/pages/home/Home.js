@@ -2,12 +2,10 @@ import React, { Fragment, useState, useEffect } from 'react';
 import '../../App.css';
 import { useNavigate } from 'react-router-dom';
 
-import Modal from '../../../src/utils/modal/Modal';
-import Form from '../../../src/components/form/Form';
 import Notify from '../../../src/utils/notify/Notify';
 import Table from '../../../src/components/table/Table';
 
-import { getPlaces, addPlace, deletePlace } from '../../../src/services/Places';
+import { getPlaces, deletePlace } from '../../../src/services/Places';
 
 
 const Home = () => {
@@ -50,10 +48,10 @@ const Home = () => {
         try {
             await deletePlace(id);
             await fetchPlaces();
-            showNotify('Place deleted successfully', 'success');
+            showNotify('Lugar eliminado satisfactoriamente.', 'success');
         } catch (e) {
             console.error("Error deleting place: ", e);
-            showNotify('Error deleting place', 'error');
+            showNotify('Hubo un error al momento de eliminar.', 'error');
         } finally {
             setIsLoading(false);
         }
@@ -77,8 +75,15 @@ const Home = () => {
 
             <div className='container'>
                 <div className='container container-form'>
-                    <button className='btn' onClick={toAdd}>Agregar lugar</button>
-                    <input type='search' className='input' />
+                    <button 
+                        className='btn btn-primary' 
+                        onClick={toAdd} 
+                        title='Agregar'
+                    >Agregar lugar</button>
+                    <input 
+                        type='search' 
+                        className='input' 
+                    />
                 </div>
                 <div className='container container-table'>
                     <Table data={places} onDelete={handleDelete} />
@@ -97,6 +102,7 @@ const Home = () => {
                 type={notify.type}
                 onClose={() => setNotify({ ...notify, isOpen: false })}
             />
+
         </Fragment>
     );
 };

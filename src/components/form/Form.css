@@ -5,8 +5,12 @@ form {
 }
 
 form .container-opt {
+    gap: 7px;
     width: 100%;
-    text-align: end;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: end;
 }
 
 input[type="radio"] {

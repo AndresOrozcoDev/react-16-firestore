@@ -161,15 +161,17 @@ const Form = ({ onAddPlace }) => {
 
         <div className='container-opt'>
           <input
-            className="btn"
+            className="btn btn-primary"
             type="submit"
             value="Agregar"
+            title='Agregar'
           />
           <input
-            className="btn"
+            className="btn btn-secondary"
             type="submit"
             onClick={goBack}
             value="Regresar"
+            title='Regresar'
           />
         </div>
 
