@@ -77,7 +77,7 @@
 
 .btn-secondary {
   color: var(--black-color);
-  border: 1px solid var(--black-color);
+  border: 1px solid var(--gray-color);
   background-color: var(--gray-color);
  }
 

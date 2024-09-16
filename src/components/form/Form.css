@@ -1,16 +1,16 @@
 form {
-    gap: 12px;
+    gap: 15px;
     display: flex;
     flex-wrap: wrap;
 }
 
 form .container-opt {
-    gap: 7px;
+    gap: 10px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: end;
+    justify-content: center;
 }
 
 input[type="radio"] {
@@ -26,3 +26,9 @@ input[type="radio"] {
 .input-radio label {
     cursor: pointer;
 }
+
+@media (min-width: 475px) {
+    form .container-opt{
+        justify-content: end;
+    }
+ }
