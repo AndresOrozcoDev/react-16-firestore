@@ -27,7 +27,7 @@
   position: absolute;
 }
 
-@media (max-width: 475px) {
+@media (max-width: 576px) {
   .modal-container {
     max-width: 85%;
   }

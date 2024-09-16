@@ -26,8 +26,8 @@ const Add = () => {
         setIsLoading(true);
         try {
             await addPlace(placeData);
-            showNotify('Lugar agregado satisfactoriamente.', 'success');
-            navigate('/');
+            await showNotify('Lugar agregado satisfactoriamente.', 'success');
+            await navigate('/');
         } catch (e) {
             console.error("Error adding place: ", e);
             showNotify('Hubo un error al momento de agregar.', 'error');

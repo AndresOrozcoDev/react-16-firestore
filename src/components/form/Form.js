@@ -64,7 +64,7 @@ const Form = ({ onAddPlace }) => {
       <form onSubmit={handleSubmit}>
 
         <div className='form-group'>
-          <label>Name</label>
+          <label>Name*</label>
           <input
             className="input"
             type="text"
@@ -81,7 +81,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Ubicacion</label>
+          <label>Ubicacion*</label>
           <input
             className="input"
             type="text"
@@ -98,7 +98,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Codigo</label>
+          <label>Codigo*</label>
           <select
             className="input"
             name="code"
@@ -114,7 +114,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Categoria</label>
+          <label>Categoria*</label>
           <select
             className="input"
             name="category"
@@ -133,7 +133,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Estado</label>
+          <label>Estado*</label>
           <div className='input-radio'>
             <input
               type="radio"

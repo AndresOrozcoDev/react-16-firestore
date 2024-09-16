@@ -36,7 +36,7 @@
 }
 
 .container-form {
-  gap: 10px;
+  gap: 15px;
   display: flex;
   flex-direction: column;
 }
@@ -47,12 +47,17 @@
 
 .container-form .input {
   width: 100%;
+  outline: none;
   padding-inline: 10px;
   height: var(--height);
   color: var(--black-color);
   border-radius: var(--border-radius);
   border: 1px solid var(--gray-color);
   background-color: var(--white-color);
+}
+
+.container-form .input:focus {
+  box-shadow: 0px 0px 4px rgba(0, 170, 255,.5);
 }
 
 .title {
@@ -128,6 +133,7 @@
 
 .form-group .input {
   width: 100%;
+  outline: none;
   font-size: 1rem;
   padding-inline: 10px;
   height: var(--height);
@@ -137,7 +143,11 @@
   background-color: var(--white-color);
 }
 
-@media (min-width: 475px) {
+.form-group .input:focus {
+  box-shadow: 0px 0px 4px rgba(0, 170, 255,.5);
+}
+
+@media (min-width: 576px) {
   .container-form {
     flex-direction: row;
     align-items: start;
