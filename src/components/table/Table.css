@@ -16,8 +16,7 @@
     background-color: var(--gray-color);
 }
 
-.content-table table thead tr th,
-.content-table table tbody tr td {
+.content-table table thead tr th {
     font-size: 1rem;
 }
 
