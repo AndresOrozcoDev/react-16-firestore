@@ -19,6 +19,9 @@
 .content-table table thead tr th {
     font-size: 1rem;
 }
+.content-table table tbody tr td {
+    font-size: 1rem;
+}
 
 td,
 th {
