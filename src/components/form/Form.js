@@ -102,7 +102,7 @@ const Form = ({ onAddPlace }) => {
           <select
             className="input"
             name="code"
-            value={formData.category}
+            value={formData.code}
             onChange={handleChange}
             required
           >
