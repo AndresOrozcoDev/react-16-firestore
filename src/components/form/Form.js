@@ -11,7 +11,7 @@ const Form = ({ onAddPlace }) => {
     category: '',
     location: '',
     code: '',
-    status: 'nuevo',
+    status: 'Nuevo',
   });
 
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Form = ({ onAddPlace }) => {
         category: '',
         location: '',
         code: '',
-        status: 'nuevo',
+        status: 'Nuevo',
       });
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -139,7 +139,7 @@ const Form = ({ onAddPlace }) => {
               type="radio"
               id="nuevo"
               name="status"
-              value="nuevo"
+              value="Nuevo"
               onChange={handleChange}
               required
             />
@@ -151,7 +151,7 @@ const Form = ({ onAddPlace }) => {
               type="radio"
               id="conocido"
               name="status"
-              value="conocido"
+              value="Conocido"
               onChange={handleChange}
               required
             />

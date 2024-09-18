@@ -4,7 +4,7 @@
     background-color: var(--white-color);
 }
 
-table {
+.content-table table {
     width: 100%;
     padding: 1rem;
     table-layout: auto;
@@ -12,9 +12,12 @@ table {
     background-color: var(--white-color);
 }
 
-thead {
-    position: sticky;
+.content-table table thead {
     background-color: var(--gray-color);
+}
+
+.content-table table thead tr th {
+    font-size: 1rem;
 }
 
 td,
