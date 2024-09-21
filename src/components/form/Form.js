@@ -55,6 +55,14 @@ const Form = ({ onAddPlace }) => {
     }
   };
 
+  // Función para manejar el cambio del toggle switch
+  const handleToggleChange = (e) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      status: e.target.checked ? 'Conocido' : 'Nuevo',
+    }));
+  };
+
 
   return (
     <Fragment>
@@ -134,29 +142,15 @@ const Form = ({ onAddPlace }) => {
 
         <div className='form-group'>
           <label>Estado*</label>
-          <div className='input-radio'>
+          <label className="switch">
             <input
-              type="radio"
-              id="nuevo"
-              name="status"
-              value="Nuevo"
-              onChange={handleChange}
-              required
+              type="checkbox"
+              checked={formData.status === 'Conocido'}
+              onChange={handleToggleChange}
             />
-            <label htmlFor="nuevo">Nuevo</label>
-          </div>
-
-          <div className='input-radio'>
-            <input
-              type="radio"
-              id="conocido"
-              name="status"
-              value="Conocido"
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="conocido">Conocido</label>
-          </div>
+            <span className="slider"></span>
+          </label>
+          <p>{formData.status}</p> {/* Muestra "Nuevo" o "Conocido" */}
         </div>
 
         <div className='container-opt'>

@@ -35,7 +35,17 @@ const Table = ({ data, onDelete }) => {
                                     <td className='ellipsis'>{item.category}</td>
                                     <td className='ellipsis'>{item.location}</td>
                                     <td className='ellipsis'>{item.code}</td>
-                                    <td className='ellipsis'>{item.status}</td>
+                                    {/* <td className='ellipsis'>{item.status}</td> */}
+                                    <td className='ellipsis'>
+                                        <label className="switch">
+                                            <input
+                                                type="checkbox"
+                                                checked={item.status === "Conocido"}
+                                                readOnly
+                                            />
+                                            <span className="slider"></span>
+                                        </label>
+                                    </td>
                                     <td onClick={() => handleDelete(item.id)} title='Eliminar' className='btn-red'>X</td>
                                 </tr>
                             ))}
