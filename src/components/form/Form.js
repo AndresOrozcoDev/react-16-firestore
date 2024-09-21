@@ -18,7 +18,7 @@ const Form = ({ onAddPlace }) => {
 
   const goBack = () => {
     navigate('/');
-};
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,7 +72,7 @@ const Form = ({ onAddPlace }) => {
       <form onSubmit={handleSubmit}>
 
         <div className='form-group'>
-          <label>Name*</label>
+          <label>Name:*</label>
           <input
             className="input"
             type="text"
@@ -89,7 +89,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Ubicacion*</label>
+          <label>Ubicación:*</label>
           <input
             className="input"
             type="text"
@@ -106,7 +106,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Codigo*</label>
+          <label>Codigo:*</label>
           <select
             className="input"
             name="code"
@@ -114,7 +114,7 @@ const Form = ({ onAddPlace }) => {
             onChange={handleChange}
             required
           >
-            <option value="" disabled>Codigo</option>
+            <option value="" disabled>Selecciona un codigo</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -122,7 +122,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Categoria*</label>
+          <label>Categoria:*</label>
           <select
             className="input"
             name="category"
@@ -130,7 +130,7 @@ const Form = ({ onAddPlace }) => {
             onChange={handleChange}
             required
           >
-            <option value="" disabled>Categoria</option>
+            <option value="" disabled>Selecciona una categoria</option>
             <option value="Restaurante">Restaurante</option>
             <option value="Mirador">Mirador</option>
             <option value="Rooftop">Roof top</option>
@@ -141,16 +141,18 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Estado*</label>
-          <label className="switch">
-            <input
-              type="checkbox"
-              checked={formData.status === 'Conocido'}
-              onChange={handleToggleChange}
-            />
-            <span className="slider"></span>
-          </label>
-          <p>{formData.status}</p> {/* Muestra "Nuevo" o "Conocido" */}
+          <div className='toggle-switch'>
+            <label>Estado:*</label>
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={formData.status === 'Conocido'}
+                onChange={handleToggleChange}
+              />
+              <span className="slider"></span>
+            </label>
+            <p className='msg'>{formData.status}</p> {/* Muestra "Nuevo" o "Conocido" */}
+          </div>
         </div>
 
         <div className='container-opt'>
