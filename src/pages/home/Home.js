@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 import Notify from '../../../src/utils/notify/Notify';
-import Table from '../../../src/components/table/Table';
+import Data from '../../../src/components/data/Data';
 
 import { getPlaces, deletePlace } from '../../../src/services/Places';
 
@@ -86,8 +86,8 @@ const Home = () => {
                         placeholder='Buscar' 
                     />
                 </div>
-                <div className='container container-table'>
-                    <Table data={places} onDelete={handleDelete} />
+                <div className='container'>
+                    <Data data={places} onDelete={handleDelete} />
                 </div>
             </div>
 
