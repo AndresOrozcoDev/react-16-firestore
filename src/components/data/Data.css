@@ -11,7 +11,7 @@
 }
 
 .card {
-    background-color: #f9f9f9;
+    background-color: var(--gray-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -21,10 +21,29 @@
 .card-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
-.card-body p {
-    margin: 8px 0;
+.card-body .item {
+    display: flex;
+    flex-direction: column;
+    margin-block: 0.5rem;
+}
+
+.card-body div:last-child{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body div:last-child div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-body .item span:first-child {
+    font-weight: bold;
 }
 
 /* Mostrar tabla en pantallas grandes y ocultar cards */
@@ -42,28 +61,19 @@
         border-collapse: collapse;
     }
 
+    table thead tr {
+        background-color: var(--gray-color);
+    }
+
     th, td {
         padding: 12px;
         text-align: left;
-        border-bottom: 1px solid #ddd;
+        border: 1px solid #ddd;
     }
 
     .ellipsis {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
-
-    .btn-red {
-        color: white;
-        background-color: #ff4d4d;
-        padding: 5px 10px;
-        cursor: pointer;
-        border: none;
-        border-radius: 4px;
-    }
-
-    .btn-red:hover {
-        background-color: #e60000;
     }
 }

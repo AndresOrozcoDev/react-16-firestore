@@ -25,20 +25,32 @@ const Data = ({ data, onDelete }) => {
                             <span onClick={() => handleDelete(item.id)} title='Eliminar' className='btn-red'>X</span>
                         </div>
                         <div className='card-body'>
-                            <p><strong>Categoria:</strong> {item.category}</p>
-                            <p><strong>Ubicación:</strong> {item.location}</p>
-                            <p><strong>Código:</strong> {item.code}</p>
-                            <p>
-                                <strong>Estado:</strong> 
-                                <label className="switch">
-                                    <input
-                                        type="checkbox"
-                                        checked={item.status === "Conocido"}
-                                        readOnly
-                                    />
-                                    <span className="slider"></span>
-                                </label>
-                            </p>
+                            <div className='item'>
+                                <span>Categoria:</span>
+                                <span>{item.category}</span>
+                            </div>
+                            <div className='item'>
+                                <span>Ubicacion:</span>
+                                <span>{item.location}</span>
+                            </div>
+                            <div className='item'>
+                                <span>Codigo:</span>
+                                <span>{item.code}</span>
+                            </div>
+                            <div>
+                                <strong>Estado:</strong>
+                                <div>
+                                    <p className='msg'>{item.status}</p>
+                                    <label className="switch">
+                                        <input
+                                            type="checkbox"
+                                            checked={item.status === "Conocido"}
+                                            readOnly
+                                        />
+                                        <span className="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 ))}
