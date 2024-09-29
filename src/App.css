@@ -61,7 +61,7 @@
   box-shadow: 0px 0px 4px rgba(0, 170, 255,.5);
 }
 
-.title {
+.banner {
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -100,9 +100,28 @@
   text-overflow: ellipsis;
 }
 
+.text {
+  color: var(--black-color);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.paragrah {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 .msg {
   font-size: 0.8rem;
-  color: var(--black-color);
+  font-weight: normal;
 }
 
 .msg-error {

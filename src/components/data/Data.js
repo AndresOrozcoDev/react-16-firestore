@@ -21,26 +21,26 @@ const Data = ({ data, onDelete }) => {
                 {sortedData.map((item) => (
                     <div key={item.id} className='card'>
                         <div className='card-header'>
-                            <h3 className='ellipsis'>{item.name}</h3>
+                            <span className='ellipsis subtitle'>{item.name}</span>
                             <span onClick={() => handleDelete(item.id)} title='Eliminar' className='btn-red'>X</span>
                         </div>
                         <div className='card-body'>
                             <div className='item'>
-                                <span>Categoria:</span>
-                                <span>{item.category}</span>
+                                <span className='paragrah'>Categoria:</span>
+                                <span className='paragrah'>{item.category}</span>
                             </div>
                             <div className='item'>
-                                <span>Ubicacion:</span>
-                                <span>{item.location}</span>
+                                <span className='paragrah'>Ubicacion:</span>
+                                <span className='paragrah'>{item.location}</span>
                             </div>
                             <div className='item'>
-                                <span>Codigo:</span>
-                                <span>{item.code}</span>
+                                <span className='paragrah'>Codigo:</span>
+                                <span className='paragrah'>{item.code}</span>
                             </div>
-                            <div>
-                                <strong>Estado:</strong>
+                            <div className='item'>
+                                <span className='paragrah'>Estado:</span>
                                 <div>
-                                    <p className='msg'>{item.status}</p>
+                                    <p className='paragrah'>{item.status}</p>
                                     <label className="switch">
                                         <input
                                             type="checkbox"

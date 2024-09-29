@@ -71,7 +71,7 @@ const Home = () => {
                 </div>
             )}
 
-            <h2 className='title'>MEDELLIN</h2>
+            <h2 className='banner'>MEDELLIN</h2>
 
             <div className='container'>
                 <div className='container container-form'>

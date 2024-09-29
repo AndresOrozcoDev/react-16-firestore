@@ -67,12 +67,12 @@ const Form = ({ onAddPlace }) => {
   return (
     <Fragment>
 
-      <h2 className='title'>Crear Lugar</h2>
+      <h2 className='banner'>Crear Lugar</h2>
 
       <form onSubmit={handleSubmit}>
 
         <div className='form-group'>
-          <label>Name:*</label>
+          <label>Name: *</label>
           <input
             className="input"
             type="text"
@@ -89,7 +89,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Ubicación:*</label>
+          <label>Ubicación: *</label>
           <input
             className="input"
             type="text"
@@ -106,7 +106,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Codigo:*</label>
+          <label>Codigo: *</label>
           <select
             className="input"
             name="code"
@@ -122,7 +122,7 @@ const Form = ({ onAddPlace }) => {
         </div>
 
         <div className='form-group'>
-          <label>Categoria:*</label>
+          <label>Categoria: *</label>
           <select
             className="input"
             name="category"
@@ -142,7 +142,7 @@ const Form = ({ onAddPlace }) => {
 
         <div className='form-group'>
           <div className='toggle-switch'>
-            <label>Estado:*</label>
+            <label>Estado: *</label>
             <label className="switch">
               <input
                 type="checkbox"
