@@ -151,47 +151,47 @@
 
 /* Estilos para el toggle switch */
 .toggle-switch {
-  display: inline-flex;
-  flex-direction: row;
   gap: 10px;
+  flex-direction: row;
   align-items: center;
+  display: inline-flex;
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
   width: 50px;
   height: 24px;
+  position: relative;
+  display: inline-block;
 }
 
 .switch input {
-  opacity: 0;
   width: 0;
   height: 0;
+  opacity: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  cursor: pointer;
   transition: 0.4s;
+  position: absolute;
   border-radius: 24px;
+  background-color: #ccc;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
   left: 4px;
+  width: 18px;
+  content: "";
   bottom: 3px;
-  background-color: white;
+  height: 18px;
   transition: 0.4s;
   border-radius: 50%;
+  position: absolute;
+  background-color: white;
 }
 
 input:checked + .slider {
@@ -202,13 +202,10 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-
-
-
 @media (min-width: 576px) {
   .container-form {
-    flex-direction: row;
     align-items: start;
+    flex-direction: row;
   }
 
   .container-form .btn,
