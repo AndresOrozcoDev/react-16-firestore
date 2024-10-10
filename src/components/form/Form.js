@@ -81,7 +81,7 @@ const Form = ({ onAddPlace }) => {
             onInput={() => handleInput(nameInputRef)}
             value={formData.name}
             onChange={handleChange}
-            placeholder="Nombre"
+            placeholder="Ingrese el nombre"
             inputMode="text"
             autoComplete="off"
             required
@@ -98,7 +98,7 @@ const Form = ({ onAddPlace }) => {
             onInput={() => handleInput(locationInputRef)}
             value={formData.location}
             onChange={handleChange}
-            placeholder="Ubicacion"
+            placeholder="Ingrese la ubicacion"
             inputMode="text"
             autoComplete="off"
             required
@@ -115,9 +115,9 @@ const Form = ({ onAddPlace }) => {
             required
           >
             <option value="" disabled>Selecciona un codigo</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="1">1 - Top</option>
+            <option value="2">2 - Medio</option>
+            <option value="3">3 - Sencillo</option>
           </select>
         </div>
 
