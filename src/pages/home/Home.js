@@ -11,6 +11,8 @@ import { getPlaces, deletePlace } from '../../../src/services/Places';
 const Home = () => {
     const [places, setPlaces] = useState([]);
     // const [isModalOpen, setIsModalOpen] = useState(false);
+    const [filteredPlaces, setFilteredPlaces] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
     const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' });
     const [isLoading, setIsLoading] = useState(false);
 
@@ -36,6 +38,7 @@ const Home = () => {
         try {
             const placesData = await getPlaces();
             setPlaces(placesData);
+            setFilteredPlaces(placesData); // Inicialmente, mostrar todos los lugares
         } catch (e) {
             console.error("Error fetching places: ", e);
         } finally {
@@ -61,6 +64,14 @@ const Home = () => {
         fetchPlaces();
     }, []);
 
+    useEffect(() => {
+        // Filtrar lugares según el término de búsqueda
+        const filtered = places.filter(place =>
+            place.location.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredPlaces(filtered);
+    }, [searchTerm, places]); // Se ejecuta cada vez que cambia searchTerm o places
+
 
     return (
         <Fragment>
@@ -84,10 +95,12 @@ const Home = () => {
                         type='search' 
                         className='input'
                         placeholder='Buscar' 
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)} // Actualiza el término de búsqueda
                     />
                 </div>
                 <div className='container'>
-                    <Data data={places} onDelete={handleDelete} />
+                    <Data data={filteredPlaces} onDelete={handleDelete} />
                 </div>
             </div>
 
