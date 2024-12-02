@@ -10,14 +10,12 @@ import Add from './pages/add/Add';
 function App() {
 
   return (
-    <BrowserRouter>
-      <div className='bg-full'>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/add" element={<Add />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className='bg-full'>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<Add />} />
+      </Routes>
+    </div>
   );
 }
 

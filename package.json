@@ -37,7 +37,8 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^16.0.0",
+    "@firebase/testing": "^0.20.11",
+    "@testing-library/react": "^16.0.1",
     "jest": "^27.5.1"
   }
 }

@@ -38,7 +38,7 @@ const Home = () => {
         try {
             const placesData = await getPlaces();
             setPlaces(placesData);
-            setFilteredPlaces(placesData); // Inicialmente, mostrar todos los lugares
+            setFilteredPlaces(placesData);
         } catch (e) {
             console.error("Error fetching places: ", e);
         } finally {
